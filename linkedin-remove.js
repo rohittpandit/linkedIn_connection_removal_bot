@@ -7864,10 +7864,16 @@ async function processConnections(browser, startIndex = 0) {
   
   while (true) {
     const browser = await puppeteer.launch({
-      headless: false,
-      defaultViewport: null,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
-    });
+    headless: true,  // Change from false to true
+    defaultViewport: null,
+    args: [
+    '--no-sandbox', 
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-gpu'
+  ]
+});
+
 
     try {
       // Load previous progress
