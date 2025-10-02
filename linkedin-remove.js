@@ -7920,4 +7920,4 @@ async function processConnections(browser, startIndex = 0) {
   }
 
   console.log("\n🏁 Script terminated.");
-})();a
+})();
